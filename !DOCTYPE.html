@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Iqra Zaib</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: #0e060c;
+  color: #f0e6ec;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  line-height: 1;
+}
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  transform: scale(1.05);
+}
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 40%, rgba(150,45,80,0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 35% at 25% 70%, rgba(190,120,55,0.15) 0%, transparent 60%);
+  animation: glow-pulse 7s ease-in-out infinite alternate;
+}
+@keyframes glow-pulse {
+  from { opacity: 0.75; }
+  to   { opacity: 1; }
+}
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, #0e060c);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+.hero-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #c48040;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 1.4s ease both;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 13vw, 9rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #f0e6ec;
+  text-shadow: 0 0 90px rgba(150,45,80,0.35);
+  animation: fadeUp 1.4s 0.2s ease both;
+}
+.hero-sub {
+  margin-top: 2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #9b7888;
+  line-height: 1.85;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeUp 1.4s 0.6s ease both;
+}
+.scroll-line {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 5rem;
+  background: linear-gradient(to bottom, #9b3256, transparent);
+  animation: line-breathe 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+@keyframes line-breathe {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* SECTIONS */
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.col {
+  flex: 1;
+  min-width: 260px;
+}
+/* IMAGE BOXES */
+.img-box {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06);
+  transition: transform 0.8s ease;
+  position: relative;
+}
+.img-box:hover {
+  transform: scale(1.025);
+}
+.img-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10,4,8,0.25);
+  mix-blend-mode: multiply;
+}
+.img-tall  { aspect-ratio: 3 / 4; }
+.img-wide  { aspect-ratio: 16 / 9; }
+.img-med   { aspect-ratio: 4 / 3; }
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s ease;
+}
+.img-box:hover img {
+  transform: scale(1.06);
+}
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(150,45,80,0.3), transparent);
+}
+/* QUOTE */
+.quote-wrap {
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.quote-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(150,45,80,0.12) 0%, transparent 70%);
+}
+.quote-wrap blockquote {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #f0e6ec;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+/* BEAUTY */
+.beauty-wrap {
+  background: #130910;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 7rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.beauty-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 75% at 50% 50%, rgba(150,45,80,0.18) 0%, transparent 65%);
+}
+.beauty-wrap > * {
+  position: relative;
+  z-index: 1;
+}
+.beauty-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-style: italic;
+  color: #9b3256;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 70px rgba(150,45,80,0.3);
+}
+.beauty-text {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #9b7888;
+  max-width: 38rem;
+  margin: 0 auto 1.5rem;
+  line-height: 1.9;
+}
+/* TEXT */
+.section-tag {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #c48040;
+  opacity: 0.75;
+  margin-bottom: 1.2rem;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #f0e6ec;
+  margin-bottom: 1.5rem;
+}
+p {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: #9b7888;
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+.rose  { color: #9b3256; font-style: italic; }
+.amber { color: #c48040; font-style: italic; }
+/* FOOTER */
+footer {
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(150,45,80,0.4), transparent);
+}
+.footer-bar {
+  width: 2.5rem;
+  height: 1px;
+  background: #9b3256;
+  opacity: 0.6;
+  margin: 0 auto 3rem;
+}
+.footer-sign {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-style: italic;
+  color: #f0e6ec;
+  margin-bottom: 1.2rem;
+}
+.footer-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #c48040;
+  opacity: 0.7;
+  margin: 0;
+}
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.reveal.d1 { transition-delay: 0.15s; }
+.reveal.d2 { transition-delay: 0.30s; }
+.reveal.d3 { transition-delay: 0.45s; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+@media (max-width: 640px) {
+  .row, .row-reverse { flex-direction: column; gap: 2.5rem; }
+}
+</style>
+</head>
+<body>
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img"
+    src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=1600&q=80"
+    alt="soft warm glow">
+  <div class="hero-glow"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-content">
+    <span class="hero-label">A Letter of Longing</span>
+    <h1 class="hero-name">Iqra Zaib</h1>
+    <p class="hero-sub">
+      &ldquo;The beautiful who reads.&rdquo;<br>
+      And the one who remains written in every thought.
+    </p>
+  </div>
+  <div class="scroll-line"></div>
+</div>
+<!-- MEANING -->
+<div class="section">
+  <div class="row">
+    <div class="col reveal">
+      <div class="img-box img-tall">
+        <img
+          src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800&q=80"
+          alt="roses and book">
+      </div>
+    </div>
+    <div class="col">
+      <span class="section-tag reveal">Her Name</span>
+      <h2 class="reveal d1">The Meaning in <span class="rose">Everything</span></h2>
+      <p class="reveal d2">
+        They say names carry weight, holding fragments of a person&rsquo;s soul.
+        Iqra &mdash; &ldquo;to read,&rdquo; a seeker of depth and truth.
+        Zaib &mdash; &ldquo;beauty,&rdquo; the quiet grace that adorns the world around her.
+      </p>
+      <p class="reveal d3">
+        Together: the beautiful who reads. To me, it means the story I never
+        want to end &mdash; the beauty that remains long after she has left the room.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<!-- QUOTE -->
+<div class="quote-wrap">
+  <blockquote class="reveal">
+    &ldquo;Time stops when I think of you. The world goes quiet,
+    and it&rsquo;s just the memory of your light.&rdquo;
+  </blockquote>
+</div>
+<div class="divider"></div>
+<!-- WORDS UNSPOKEN -->
+<div class="section">
+  <div class="row row-reverse">
+    <div class="col reveal">
+      <div class="img-box img-med">
+        <img
+          src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80"
+          alt="letter writing by candlelight">
+      </div>
+    </div>
+    <div class="col">
+      <span class="section-tag reveal">The Letters I Never Sent</span>
+      <h2 class="reveal d1">Words Left <span class="amber">Unspoken</span></h2>
+      <p class="reveal d2">
+        I write letters to you in my mind before I fall asleep. I tell you
+        about my days, the small things that reminded me of you &mdash; the quiet
+        moments where your absence was the loudest sound in the room.
+      </p>
+      <p class="reveal d3">
+        Every thought curves back to you. Every sentence ends with your name.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- BEAUTY -->
+<div class="beauty-wrap">
+  <p class="beauty-title reveal">Your beauty remains.</p>
+  <p class="beauty-text reveal d1">
+    Not just the way you look, though that alone could stop a heart.
+    It&rsquo;s the beauty of your spirit &mdash; the way you make the world
+    softer just by being in it.
+  </p>
+  <p class="beauty-text reveal d2">
+    You are the warmth in the cold, the spark in the dark.
+    A singular, radiant truth that I was lucky enough to witness.
+  </p>
+</div>
+<!-- QUIET ACHE -->
+<div class="section">
+  <div class="row">
+    <div class="col reveal">
+      <div class="img-box img-wide">
+        <img
+          src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1200&q=80"
+          alt="golden light">
+      </div>
+    </div>
+    <div class="col">
+      <span class="section-tag reveal">Missing You</span>
+      <h2 class="reveal d1">The Quiet <span class="rose">Ache</span></h2>
+      <p class="reveal d2">
+        There is a silence that fills the space where you used to be.
+        It isn&rsquo;t empty &mdash; it&rsquo;s heavy, filled with the echoes of your laugh,
+        the softness of your gaze, the warmth of your presence.
+      </p>
+      <p class="reveal d3">
+        Missing you is like waiting for dawn in the middle of the night.
+        The dark is beautiful, lit by the memory of you &mdash;
+        but the longing for the sun remains.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bar reveal"></div>
+  <p class="footer-sign reveal d1">Forever yours,</p>
+  <p class="footer-tag reveal d2">Endless Love</p>
+</footer>
+<script>
+(function () {
+  var elements = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  elements.forEach(function (el) { observer.observe(el); });
+}());
+</script>
+</body>
+</html>
